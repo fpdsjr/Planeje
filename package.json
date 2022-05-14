@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "main": "index.js",
   "license": "MIT",
+  "scripts": {
+    "dev": "ts-node-dev --exit-child --transpile-only --ignore-watch node_modules src/server.ts"
+  },
   "dependencies": {
     "@typescript-eslint/eslint-plugin": "^4.0.1",
     "eslint": "^7.12.1",
