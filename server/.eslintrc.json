@@ -4,6 +4,6 @@
     "project": "./tsconfig.json"
   },
   "rules": {
-    "semi": 0
+    "@typescript-eslint/no-misused-promises": "off"
   }
 }
