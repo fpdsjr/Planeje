@@ -1,7 +1,7 @@
 import { ICreateTaskDTO } from '../dtos/ICreateTaskDTO'
 
 interface ITasksRepository {
-  createTask: (data: ICreateTaskDTO) => void
+  createTask: ({ description }: ICreateTaskDTO) => Promise<void>
 }
 
 export { ITasksRepository }
