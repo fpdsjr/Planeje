@@ -1,8 +1,8 @@
 import { prisma } from '../../../../database/prisma'
 import { ICreateTaskDTO } from '../../dtos/ICreateTaskDTO'
-import { ICreateTasksRepository } from '../../repositories/ICreateTasksRepository'
+import { ITasksRepository } from '../../repositories/ITasksRepository'
 
-class TasksRepository implements ICreateTasksRepository {
+class TasksRepository implements ITasksRepository {
   async createTask ({ description }: ICreateTaskDTO): Promise<void> {
     await prisma.task.create({
       data: {
