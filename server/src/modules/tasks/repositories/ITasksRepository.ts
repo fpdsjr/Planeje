@@ -1,7 +1,7 @@
 import { ICreateTaskDTO } from '../dtos/ICreateTaskDTO'
 
-interface ICreateTasksRepository {
+interface ITasksRepository {
   createTask: (data: ICreateTaskDTO) => void
 }
 
-export { ICreateTasksRepository }
+export { ITasksRepository }

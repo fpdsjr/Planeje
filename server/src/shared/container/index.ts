@@ -1,5 +1,5 @@
 import { container } from 'tsyringe'
 import { TasksRepository } from '../../modules/tasks/infra/repositories/TasksRepository'
-import { ICreateTasksRepository } from '../../modules/tasks/repositories/ICreateTasksRepository'
+import { ITasksRepository } from '../../modules/tasks/repositories/ITasksRepository'
 
-container.registerSingleton<ICreateTasksRepository>('TasksRepository', TasksRepository)
+container.registerSingleton<ITasksRepository>('TasksRepository', TasksRepository)
