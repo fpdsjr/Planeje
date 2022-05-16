@@ -1,8 +1,27 @@
+import { TasksRepositoryInMemory } from '../../repositories/in-memory/TasksRepositoryInMemory'
+import { CreateTaskUseCase } from './CreateTaskUseCase'
 
-describe('Criar tasks', () => {
-  it('', () => {
-    const soma = 2 + 2
+let createTaskUseCase: CreateTaskUseCase
+let tasksRepositoryInMemory: TasksRepositoryInMemory
 
-    expect(soma).toBe(4)
+describe('Create Tasks', () => {
+  beforeEach(() => {
+    tasksRepositoryInMemory = new TasksRepositoryInMemory()
+    createTaskUseCase = new CreateTaskUseCase(tasksRepositoryInMemory)
+  })
+
+  it('should be able to create a new task', async () => {
+    const taskDescription = {
+      description: 'Add to tasks to notion'
+    }
+
+    await createTaskUseCase.execute({ description: taskDescription.description })
+
+    const createdTask = tasksRepositoryInMemory.tasks.find(
+      (task) => task.description === taskDescription.description)
+
+    console.log(createdTask)
+
+    expect(createdTask).toHaveProperty('id')
   })
 })
