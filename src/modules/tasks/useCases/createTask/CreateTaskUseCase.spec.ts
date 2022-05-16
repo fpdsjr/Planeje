@@ -20,8 +20,6 @@ describe('Create Tasks', () => {
     const createdTask = tasksRepositoryInMemory.tasks.find(
       (task) => task.description === taskDescription.description)
 
-    console.log(createdTask)
-
     expect(createdTask).toHaveProperty('id')
   })
 })
