@@ -1,1 +1,67 @@
-{}
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "Projete Api",
+    "description": "Tasks manager api",
+    "contact": {
+      "email": "flaviopds.jr@gmail.com"
+    },
+    "version": "1.0"
+  },
+  "paths": {
+    "/tasks/create": {
+      "post": {
+        "summary": "Create a new Task",
+        "description": "Will be responsible for registering a new task",
+        "tags": ["Tasks"],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "properties": {
+                  "description": {
+                    "type": "string"
+                  }
+                }
+              },
+              "examples": {
+                "task": {
+                  "value": {
+                    "description": "Go to the market to buy groceries"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Created",
+            "content": {
+              "application/json":{
+                "schema":{
+                  "type": "object",
+                  "properties": {
+                    "message": {
+                      "type": "string",
+                      "description": "Created"
+                    }
+                  }
+                },
+                "examples": {
+                  "task": {
+                    "value":{
+                      "message": "Created"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      
+      }
+    }
+  }
+
+}
