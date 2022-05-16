@@ -7,13 +7,13 @@ class TasksRepositoryInMemory implements ITasksRepository {
   tasks: Task[] = []
 
   async createTask ({ description }: ICreateTaskDTO): Promise<void> {
-    const tasks = {
-      id: 'testId',
+    const task = {
+      id: uuidv4(),
       description,
       status: TasksStatus.PENDING
     }
 
-    this.tasks.push(tasks)
+    this.tasks.push(task)
   }
 }
 
