@@ -11,6 +11,14 @@ class TasksRepository implements ITasksRepository {
     })
   }
 
+  async findTaskById (id: string): Promise<void> {
+    await prisma.task.findUnique({
+      where: {
+        id
+      }
+    })
+  }
+
   async deleteTask (id: string): Promise<void> {
     await prisma.task.delete({
       where: {
