@@ -10,7 +10,7 @@ class CreateTaskController {
 
     await createTaskUseCase.execute({ description })
 
-    return response.status(201).json('tasks created')
+    return response.status(201).json({ message: 'Task Created' })
   }
 }
 
