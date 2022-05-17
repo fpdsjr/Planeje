@@ -1,6 +1,6 @@
-import { Task } from '@prisma/client'
+import { Task } from './entities/Task'
 import { ICreateTaskDTO } from '../dtos/ICreateTaskDTO'
-import { IUpdateTaskDTO } from '../dtos/IUpdateTaskDTO'
+import { IUpdateTaskDTO } from './IUpdateTaskDTO'
 import { IUpdateTaskStatusDTO } from '../dtos/IUpdateTaskStatusDTO'
 
 interface ITasksRepository {

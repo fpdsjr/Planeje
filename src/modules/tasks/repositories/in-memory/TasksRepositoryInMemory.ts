@@ -1,7 +1,8 @@
 import { ICreateTaskDTO } from '../../dtos/ICreateTaskDTO'
 import { ITasksRepository } from '../ITasksRepository'
 import { Task } from '../entities/Task'
-import { IUpdateTaskDTO } from '../../dtos/IUpdateTaskDTO'
+import { IUpdateTaskDTO } from '../IUpdateTaskDTO'
+import { IUpdateTaskStatusDTO } from '../../dtos/IUpdateTaskStatusDTO'
 class TasksRepositoryInMemory implements ITasksRepository {
   tasks: Task[] = []
 
@@ -30,15 +31,27 @@ class TasksRepositoryInMemory implements ITasksRepository {
   }
 
   async updateTask ({ id, description }: IUpdateTaskDTO): Promise<Task> {
-    const update = await this.findTaskById(id) as Task
+    const updatedTask = await this.findTaskById(id) as Task
 
-    Object.assign(update, {
+    Object.assign(updatedTask, {
       description
     })
 
-    this.tasks.push(update)
+    this.tasks.push(updatedTask)
 
-    return update
+    return updatedTask
+  }
+
+  async updateTaskStatus ({ id, status }: IUpdateTaskStatusDTO): Promise<Task> {
+    const updatedTaskStatus = await this.findTaskById(id) as Task
+
+    Object.assign(updatedTaskStatus, {
+      status
+    })
+
+    this.tasks.push(updatedTaskStatus)
+
+    return updatedTaskStatus
   }
 }
 
