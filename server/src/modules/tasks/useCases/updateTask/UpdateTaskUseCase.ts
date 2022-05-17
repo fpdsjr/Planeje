@@ -7,7 +7,7 @@ import { ITasksRepository } from '../../repositories/ITasksRepository'
 @injectable()
 class UpdateTaskUseCase {
   constructor (
-    @inject('UsersRepository')
+    @inject('TasksRepository')
     private readonly taskRepository: ITasksRepository) {}
 
   async execute ({ id, description }: IUpdateTaskDTO): Promise<Task> {
