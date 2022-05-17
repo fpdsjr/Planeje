@@ -12,7 +12,7 @@ class UpdateTaskStatusUseCase {
     private readonly tasksRepository: ITasksRepository) { }
 
   async execute ({ id, status }: IUpdateTaskStatusDTO): Promise<Task> {
-    const findTask = this.tasksRepository.findTaskById(id)
+    const findTask = await this.tasksRepository.findTaskById(id)
 
     if (!findTask) {
       throw new AppError('Task do not exists!', 404)
