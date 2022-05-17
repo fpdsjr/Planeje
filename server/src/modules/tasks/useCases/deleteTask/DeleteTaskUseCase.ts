@@ -9,9 +9,9 @@ class DeleteTaskUseCase {
     private readonly tasksRepository: ITasksRepository) {}
 
   async execute (id: string): Promise<void> {
-    const deleteId = await this.tasksRepository.findTaskById(id)
+    const findTask = await this.tasksRepository.findTaskById(id)
 
-    if (!deleteId) {
+    if (!findTask) {
       throw new AppError('Task do not exists!', 404)
     }
 
