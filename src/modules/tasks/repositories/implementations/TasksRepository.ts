@@ -60,6 +60,12 @@ class TasksRepository implements ITasksRepository {
 
     return updatedTaskStatus
   }
+
+  async listAllTasks (): Promise<Task[]> {
+    const listAllTasks = await prisma.task.findMany()
+
+    return listAllTasks
+  }
 }
 
 export { TasksRepository }
