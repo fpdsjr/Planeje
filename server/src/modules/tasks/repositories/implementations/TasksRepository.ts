@@ -2,6 +2,7 @@ import { Task } from '../entities/Task'
 import { prisma } from '../../../../database/prisma'
 import { ICreateTaskDTO } from '../../dtos/ICreateTaskDTO'
 import { ITasksRepository } from '../../repositories/ITasksRepository'
+import { IUpdateTaskDTO } from '../../dtos/IUpdateTaskDTO'
 
 class TasksRepository implements ITasksRepository {
   async createTask ({ description }: ICreateTaskDTO): Promise<Task> {
@@ -32,7 +33,7 @@ class TasksRepository implements ITasksRepository {
     })
   }
 
-  async updateTask (id: string, description: string): Promise<Task> {
+  async updateTask ({ id, description }: IUpdateTaskDTO): Promise<Task> {
     const updatedTask = await prisma.task.update({
       where: {
         id
