@@ -17,6 +17,7 @@ model Task {
   id          String      @id @default(uuid())
   description String
   status      TasksStatus @default(PENDING)
+  created_at  DateTime    @default(now())
 
   @@map("tasks")
 }
