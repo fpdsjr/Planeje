@@ -5,7 +5,7 @@ import { Task } from '../entities/Task'
 class TasksRepositoryInMemory implements ITasksRepository {
   tasks: Task[] = []
 
-  async createTask ({ description }: ICreateTaskDTO): Promise<void> {
+  async createTask ({ description }: ICreateTaskDTO): Promise<Task> {
     const task = new Task()
 
     Object.assign(task, {
@@ -13,6 +13,8 @@ class TasksRepositoryInMemory implements ITasksRepository {
     })
 
     this.tasks.push(task)
+
+    return task
   }
 
   async findTaskById (id: string): Promise<Task | null> {
