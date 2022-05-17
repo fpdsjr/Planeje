@@ -9,6 +9,7 @@ interface ITasksRepository {
   findTaskById: (id: string) => Promise<Task | null>
   updateTask: ({ id, description }: IUpdateTaskDTO) => Promise<Task>
   updateTaskStatus: ({ id, status }: IUpdateTaskStatusDTO) => Promise<Task>
+  listAllTasks: () => Promise<Task[]>
 }
 
 export { ITasksRepository }
