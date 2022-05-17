@@ -8,9 +8,9 @@ class CreateTaskController {
 
     const createTaskUseCase = container.resolve(CreateTaskUseCase)
 
-    await createTaskUseCase.execute({ description })
+    const task = await createTaskUseCase.execute({ description })
 
-    return response.status(201).json({ message: 'Task Created' })
+    return response.status(201).json(task)
   }
 }
 
