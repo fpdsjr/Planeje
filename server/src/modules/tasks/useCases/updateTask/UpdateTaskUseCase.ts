@@ -1,6 +1,6 @@
 import { inject, injectable } from 'tsyringe'
 import { AppError } from '../../../../shared/errors/AppError'
-import { IUpdateTaskDTO } from '../../dtos/IUpdateTaskDTO'
+import { IUpdateTaskDTO } from '../../repositories/IUpdateTaskDTO'
 import { Task } from '../../repositories/entities/Task'
 import { ITasksRepository } from '../../repositories/ITasksRepository'
 
