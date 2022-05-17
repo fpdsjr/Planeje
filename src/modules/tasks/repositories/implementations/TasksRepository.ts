@@ -1,15 +1,17 @@
-import { Task } from '@prisma/client'
+import { Task } from '../entities/Task'
 import { prisma } from '../../../../database/prisma'
 import { ICreateTaskDTO } from '../../dtos/ICreateTaskDTO'
 import { ITasksRepository } from '../../repositories/ITasksRepository'
 
 class TasksRepository implements ITasksRepository {
-  async createTask ({ description }: ICreateTaskDTO): Promise<void> {
-    await prisma.task.create({
+  async createTask ({ description }: ICreateTaskDTO): Promise<Task> {
+    const task = await prisma.task.create({
       data: {
         description
       }
     })
+
+    return task
   }
 
   async findTaskById (id: string): Promise<Task | null> {
