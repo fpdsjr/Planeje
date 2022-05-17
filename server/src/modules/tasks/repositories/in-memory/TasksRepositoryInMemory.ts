@@ -53,6 +53,12 @@ class TasksRepositoryInMemory implements ITasksRepository {
 
     return updatedTaskStatus
   }
+
+  async listAllTasks (): Promise<Task[]> {
+    const listAllTasks = this.tasks
+
+    return listAllTasks
+  }
 }
 
 export { TasksRepositoryInMemory }
