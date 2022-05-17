@@ -51,7 +51,9 @@
                 "examples": {
                   "task": {
                     "value":{
-                      "message": "Created"
+                      "id": "1222deaf-fe2e-444d-8e97-56ed98f254a3",
+                      "description": "Go to the market to buy groceries",
+                      "status": "PENDING"
                     }
                   }
                 }
@@ -60,6 +62,69 @@
           }
         }
       
+      }
+    },
+    "/tasks/delete/{id}": {
+      "delete": {
+        "summary": "Delete a existent task",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "schema": {
+              "type": "string"
+            },
+            "required": true,
+            "description": "task id"
+          }
+        ],
+        "description": "Will be responsible to delete a task",
+        "tags": ["Tasks"],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "properties": {
+                  "description": {
+                    "type":"string"
+                  }
+                }
+              },
+              "examples": {
+                "task": {
+                  "value": {
+                    "description": "Go to the gym"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Deleted",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type":"object",
+                  "properties": {
+                    "message": {
+                      "type": "string",
+                      "description": "Task Deleted"
+                    }
+                  }
+                },
+                "examples": {
+                  "task": {
+                    "value":{
+                      "message": "Task Deleted"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
       }
     }
   }
