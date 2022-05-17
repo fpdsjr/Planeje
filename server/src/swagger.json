@@ -123,6 +123,9 @@
                 }
               }
             }
+          },
+          "404": {
+            "description": "Task do not exists!"
           }
         }
       }
