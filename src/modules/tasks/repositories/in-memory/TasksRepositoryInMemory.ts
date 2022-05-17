@@ -1,7 +1,7 @@
 import { ICreateTaskDTO } from '../../dtos/ICreateTaskDTO'
 import { ITasksRepository } from '../ITasksRepository'
 import { Task } from '../entities/Task'
-
+import { IUpdateTaskDTO } from '../../dtos/IUpdateTaskDTO'
 class TasksRepositoryInMemory implements ITasksRepository {
   tasks: Task[] = []
 
@@ -27,6 +27,18 @@ class TasksRepositoryInMemory implements ITasksRepository {
     const deleteTaskById = this.tasks.filter((task) => task.id !== id)
 
     deleteTaskById.map((task) => this.tasks.push(task))
+  }
+
+  async updateTask ({ id, description }: IUpdateTaskDTO): Promise<Task> {
+    const update = await this.findTaskById(id) as Task
+
+    Object.assign(update, {
+      description
+    })
+
+    this.tasks.push(update)
+
+    return update
   }
 }
 
