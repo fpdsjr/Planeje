@@ -1,5 +1,6 @@
-interface ICreateTaskDTO {
+interface IUpdateTaskDTO {
+  id: string
   description: string
 }
 
-export { ICreateTaskDTO }
+export { IUpdateTaskDTO }
