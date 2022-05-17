@@ -9,6 +9,6 @@ const deleteTaskController = new DeleteTaskController()
 
 tasksRoutes.post('/create', createTaskController.handle)
 
-tasksRoutes.post('/delete/:id', deleteTaskController.handle)
+tasksRoutes.delete('/delete/:id', deleteTaskController.handle)
 
 export { tasksRoutes }
