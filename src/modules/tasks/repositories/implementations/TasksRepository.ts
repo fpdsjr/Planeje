@@ -4,6 +4,8 @@ import { ICreateTaskDTO } from '../../dtos/ICreateTaskDTO'
 import { ITasksRepository } from '../../repositories/ITasksRepository'
 import { IUpdateTaskDTO } from '../../dtos/IUpdateTaskDTO'
 
+import { IUpdateTaskStatusDTO } from '../../dtos/IUpdateTaskStatusDTO'
+
 class TasksRepository implements ITasksRepository {
   async createTask ({ description }: ICreateTaskDTO): Promise<Task> {
     const task = await prisma.task.create({
@@ -44,6 +46,19 @@ class TasksRepository implements ITasksRepository {
     })
 
     return updatedTask
+  }
+
+  async updateTaskStatus ({ id, status }: IUpdateTaskStatusDTO): Promise<Task> {
+    const updatedTaskStatus = await prisma.task.update({
+      where: {
+        id
+      },
+      data: {
+        status
+      }
+    })
+
+    return updatedTaskStatus
   }
 }
 
