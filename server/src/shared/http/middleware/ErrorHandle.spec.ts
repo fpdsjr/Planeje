@@ -1,6 +1,7 @@
+/* eslint-disable @typescript-eslint/no-floating-promises */
 import { NextFunction, Request, Response } from 'express'
 import { AppError } from '../shared/errors/AppError'
-import { ErroHandle } from '.'
+import { ErrorHandle } from './index'
 
 describe('Error Handle middleware', () => {
   const response = {} as Response
@@ -14,7 +15,7 @@ describe('Error Handle middleware', () => {
   })
 
   it('should return a 500 error', () => {
-    ErroHandle(err, request, response, next)
+    ErrorHandle(err, request, response, next)
 
     expect(response.status).toBeCalledWith(500)
     expect(response.json).toBeCalledWith({
@@ -36,7 +37,7 @@ describe('Error Handle middleware', () => {
   })
 
   it('should return an error', () => {
-    ErroHandle(err, request, response, next)
+    ErrorHandle(err, request, response, next)
 
     expect(response.status).toBeCalledWith(404)
     expect(response.json).toBeCalledWith({
