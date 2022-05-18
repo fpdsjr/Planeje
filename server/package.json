@@ -5,7 +5,7 @@
   "license": "MIT",
   "scripts": {
     "dev": "ts-node-dev --exit-child --transpile-only --ignore-watch node_modules src/shared/infra/http/server.ts",
-    "pretest": "prisma migrate reset --force --skip-seed --schema /src/shared/infra/prisma/schema.test.prisma",
+    "pretest": "prisma migrate reset --force --skip-seed --schema ./src/shared/infra/prisma/schema.test.prisma",
     "test": "NODE_ENV=test jest"
   },
   "dependencies": {
