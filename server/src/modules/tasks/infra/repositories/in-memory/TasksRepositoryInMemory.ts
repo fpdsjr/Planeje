@@ -1,8 +1,8 @@
-import { ICreateTaskDTO } from '../../dtos/ICreateTaskDTO'
-import { ITasksRepository } from '../ITasksRepository'
-import { Task } from '../entities/Task'
-import { IUpdateTaskDTO } from '../IUpdateTaskDTO'
-import { IUpdateTaskStatusDTO } from '../../dtos/IUpdateTaskStatusDTO'
+import { ICreateTaskDTO } from '../../../dtos/ICreateTaskDTO'
+import { ITasksRepository } from '../../ITasksRepository'
+import { Task } from '../../entities/Task'
+import { IUpdateTaskDTO } from '../../IUpdateTaskDTO'
+import { IUpdateTaskStatusDTO } from '../../../dtos/IUpdateTaskStatusDTO'
 class TasksRepositoryInMemory implements ITasksRepository {
   tasks: Task[] = []
 

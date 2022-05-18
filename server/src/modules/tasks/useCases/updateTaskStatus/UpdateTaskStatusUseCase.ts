@@ -2,8 +2,8 @@ import { TasksStatus } from '@prisma/client'
 import { inject, injectable } from 'tsyringe'
 import { AppError } from '../../../../shared/errors/AppError'
 import { IUpdateTaskStatusDTO } from '../../dtos/IUpdateTaskStatusDTO'
-import { Task } from '../../repositories/entities/Task'
-import { ITasksRepository } from '../../repositories/ITasksRepository'
+import { Task } from '../../infra/entities/Task'
+import { ITasksRepository } from '../../infra/ITasksRepository'
 
 @injectable()
 class UpdateTaskStatusUseCase {

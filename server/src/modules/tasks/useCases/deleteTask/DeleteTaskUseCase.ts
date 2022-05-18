@@ -1,6 +1,6 @@
 import { inject, injectable } from 'tsyringe'
 import { AppError } from '../../../../shared/errors/AppError'
-import { ITasksRepository } from '../../repositories/ITasksRepository'
+import { ITasksRepository } from '../../infra/ITasksRepository'
 
 @injectable()
 class DeleteTaskUseCase {
