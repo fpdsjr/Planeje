@@ -12,10 +12,12 @@ export const Container = styled.div`
 
 export const Content = styled.div`
   margin: 0 auto;
-  width: 500px;
-  height: 100px;
+  width: 600px;
+  height: 200px;
   display: flex;
-  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  gap: 4rem;
   color: var(--lightGrayishBlue);
   text-transform: uppercase;
 `;
