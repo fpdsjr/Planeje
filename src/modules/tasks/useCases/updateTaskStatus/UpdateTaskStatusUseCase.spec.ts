@@ -1,6 +1,7 @@
+import { TasksRepositoryInMemory } from '@modules/tasks/infra/repositories/in-memory/TasksRepositoryInMemory'
 import { TasksStatus } from '@prisma/client'
-import { AppError } from '../../../../shared/errors/AppError'
-import { TasksRepositoryInMemory } from '../../infra/repositories/in-memory/TasksRepositoryInMemory'
+import { AppError } from '@shared/errors/AppError'
+
 import { UpdateTaskStatusUseCase } from './UpdateTaskStatusUseCase'
 
 let tasksRepositoryInMemory: TasksRepositoryInMemory

@@ -1,7 +1,7 @@
 
+import { app } from '@shared/infra/http/app'
+import { prisma } from 'src/database/prisma'
 import request from 'supertest'
-import { app } from '../../../../shared/infra/http/app'
-import { prisma } from '../../../../database/prisma'
 
 describe('Create Task Controller', () => {
   afterAll(async () => {

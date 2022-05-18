@@ -1,6 +1,7 @@
-import { AppError } from '../../../../shared/errors/AppError'
-import { Task } from '../../infra/entities/Task'
-import { TasksRepositoryInMemory } from '../../infra/repositories/in-memory/TasksRepositoryInMemory'
+
+import { Task } from '@modules/tasks/infra/entities/Task'
+import { TasksRepositoryInMemory } from '@modules/tasks/infra/repositories/in-memory/TasksRepositoryInMemory'
+import { AppError } from '@shared/errors/AppError'
 import { DeleteTaskUseCase } from './DeleteTaskUseCase'
 
 let deleteTaskUseCase: DeleteTaskUseCase

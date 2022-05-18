@@ -1,6 +1,7 @@
 /* eslint-disable @typescript-eslint/no-floating-promises */
+import { AppError } from '@shared/errors/AppError'
 import { NextFunction, Request, Response } from 'express'
-import { AppError } from '../../../errors/AppError'
+
 import { ErrorHandle } from './index'
 
 describe('Error Handle middleware', () => {

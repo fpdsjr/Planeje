@@ -1,8 +1,8 @@
 import { inject, injectable } from 'tsyringe'
-import { AppError } from '../../../../shared/errors/AppError'
-import { IUpdateTaskDTO } from '../../infra/IUpdateTaskDTO'
-import { Task } from '../../infra/entities/Task'
-import { ITasksRepository } from '../../infra/ITasksRepository'
+import { AppError } from '@shared/errors/AppError'
+import { IUpdateTaskDTO } from '@modules/tasks/dtos/IUpdateTaskDTO'
+import { Task } from '@modules/tasks/infra/entities/Task'
+import { ITasksRepository } from '@modules/tasks/infra/ITasksRepository'
 
 @injectable()
 class UpdateTaskUseCase {

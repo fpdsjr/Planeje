@@ -1,9 +1,9 @@
+import { IUpdateTaskStatusDTO } from '@modules/tasks/dtos/IUpdateTaskStatusDTO'
+import { Task } from '@modules/tasks/infra/entities/Task'
+import { ITasksRepository } from '@modules/tasks/infra/ITasksRepository'
 import { TasksStatus } from '@prisma/client'
+import { AppError } from '@shared/errors/AppError'
 import { inject, injectable } from 'tsyringe'
-import { AppError } from '../../../../shared/errors/AppError'
-import { IUpdateTaskStatusDTO } from '../../dtos/IUpdateTaskStatusDTO'
-import { Task } from '../../infra/entities/Task'
-import { ITasksRepository } from '../../infra/ITasksRepository'
 
 @injectable()
 class UpdateTaskStatusUseCase {
