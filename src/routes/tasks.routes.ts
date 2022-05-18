@@ -13,14 +13,14 @@ const updateTaskController = new UpdateTaskController()
 const updateTaskStatusController = new UpdateTaskStatusController()
 const listAllTasksController = new ListAllTasksController()
 
-tasksRoutes.post('/create', createTaskController.handle)
+tasksRoutes.get('/list', listAllTasksController.handle)
 
-tasksRoutes.delete('/delete/:id', deleteTaskController.handle)
+tasksRoutes.post('/create', createTaskController.handle)
 
 tasksRoutes.put('/update/:id', updateTaskController.handle)
 
 tasksRoutes.patch('/update/status/:id', updateTaskStatusController.handle)
 
-tasksRoutes.get('/list', listAllTasksController.handle)
+tasksRoutes.delete('/delete/:id', deleteTaskController.handle)
 
 export { tasksRoutes }
