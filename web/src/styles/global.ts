@@ -8,8 +8,8 @@ export const GlobalStyle = createGlobalStyle`
     --lightGrayishBlue: hsl(234, 39%, 85%);
     --lightGrayishBlueHover: hsl(236, 33%, 92%);
     --darkGrayishBlue: hsl(234, 11%, 52%);
-    --veryDarkGrayishBlue: hsl(233, 14%, 35%);
-    --VeryDarkGrayishBlue: hsl(237, 14%, 26%);
+    --veryDarkGrayishBlueHover: hsl(233, 14%, 35%);
+    --veryDarkGrayishBlue: hsl(237, 14%, 26%);
   }
   
   * {
