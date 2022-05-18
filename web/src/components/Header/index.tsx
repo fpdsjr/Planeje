@@ -2,7 +2,7 @@ import React from 'react';
 
 import { Container, Content } from './styles';
 
-const Header = () => {
+function Header() {
   return (
     <Container>
       <Content>
@@ -10,6 +10,6 @@ const Header = () => {
       </Content>
     </Container>
   );
-};
+}
 
 export default Header;
