@@ -2,7 +2,7 @@
   "openapi": "3.0.0",
   "info": {
     "title": "Projete Api",
-    "description": "Tasks manager api",
+    "description": "Tasks manager api.",
     "contact": {
       "email": "flaviopds.jr@gmail.com"
     },
