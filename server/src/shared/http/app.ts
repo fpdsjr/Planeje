@@ -2,7 +2,7 @@ import 'reflect-metadata'
 import '../container'
 import 'express-async-errors'
 import express from 'express'
-import { router } from '../../routes'
+import { router } from './routes'
 import { ErrorHandle } from './middleware'
 import swaggerUI from 'swagger-ui-express'
 
