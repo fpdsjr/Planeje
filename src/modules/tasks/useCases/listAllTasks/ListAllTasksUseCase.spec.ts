@@ -1,4 +1,4 @@
-import { TasksRepositoryInMemory } from '../../repositories/in-memory/TasksRepositoryInMemory'
+import { TasksRepositoryInMemory } from '../../infra/repositories/in-memory/TasksRepositoryInMemory'
 import { ListAllTasksUseCase } from './ListAllTasksUseCase'
 
 let tasksRepositoryInMemory: TasksRepositoryInMemory

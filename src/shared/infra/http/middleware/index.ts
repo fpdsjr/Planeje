@@ -1,5 +1,5 @@
 import { Request, Response, NextFunction } from 'express'
-import { AppError } from '../../errors/AppError'
+import { AppError } from '../../../errors/AppError'
 
 export async function ErrorHandle (err: Error, request: Request, response: Response, next: NextFunction): Promise<Response> {
   if (err instanceof AppError) {

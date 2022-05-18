@@ -1,5 +1,5 @@
 import request from 'supertest'
-import { app } from '../../../../shared/http/app'
+import { app } from '../../../../shared/infra/http/app'
 import { prisma } from '../../../../database/prisma'
 
 describe('List All Tasks Controller', () => {

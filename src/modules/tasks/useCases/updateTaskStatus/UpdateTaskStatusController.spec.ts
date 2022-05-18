@@ -1,8 +1,8 @@
 
 import request from 'supertest'
-import { app } from '../../../../shared/http/app'
+import { app } from '../../../../shared/infra/http/app'
 import { prisma } from '../../../../database/prisma'
-import { Task } from '../../repositories/entities/Task'
+import { Task } from '../../infra/entities/Task'
 
 describe('Update Task Status Controller', () => {
   afterAll(async () => {

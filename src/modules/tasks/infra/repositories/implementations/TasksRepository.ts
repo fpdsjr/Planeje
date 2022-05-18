@@ -1,10 +1,10 @@
-import { Task } from '../entities/Task'
-import { prisma } from '../../../../database/prisma'
-import { ICreateTaskDTO } from '../../dtos/ICreateTaskDTO'
-import { ITasksRepository } from '../../repositories/ITasksRepository'
-import { IUpdateTaskDTO } from '../IUpdateTaskDTO'
+import { Task } from '../../entities/Task'
+import { prisma } from '../../../../../database/prisma'
+import { ICreateTaskDTO } from '../../../dtos/ICreateTaskDTO'
+import { ITasksRepository } from '../../ITasksRepository'
+import { IUpdateTaskDTO } from '../../IUpdateTaskDTO'
 
-import { IUpdateTaskStatusDTO } from '../../dtos/IUpdateTaskStatusDTO'
+import { IUpdateTaskStatusDTO } from '../../../dtos/IUpdateTaskStatusDTO'
 
 class TasksRepository implements ITasksRepository {
   async createTask ({ description }: ICreateTaskDTO): Promise<Task> {

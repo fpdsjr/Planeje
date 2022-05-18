@@ -1,5 +1,5 @@
 import { AppError } from '../../../../shared/errors/AppError'
-import { TasksRepositoryInMemory } from '../../repositories/in-memory/TasksRepositoryInMemory'
+import { TasksRepositoryInMemory } from '../../infra/repositories/in-memory/TasksRepositoryInMemory'
 import { UpdateTaskUseCase } from './UpdateTaskUseCase'
 
 let updateTaskUseCase: UpdateTaskUseCase
