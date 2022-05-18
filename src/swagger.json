@@ -9,10 +9,64 @@
     "version": "1.0"
   },
   "paths": {
+    "/tasks/list": {
+      "get": {
+        "summary": "List all tasks.",
+        "description": "Will be responsible to list all tasks.",
+        "tags": ["Tasks"],
+        "responses": {
+          "201": {
+            "description": "List Tasks",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "id": {
+                        "type": "string"
+                      },
+                      "description": {
+                        "type": "string"
+                      },
+                      "status": {
+                        "type": "string"
+                      }
+                    }
+                  }
+                },
+                "examples": {
+                  "task": {
+                    "value": [
+                      {
+                        "id": "1222deaf-fe2e-444d-8e97-56ed98f254a3",
+                        "description": "Pay the credit card bill",
+                        "status": "PENDING"
+                      },
+                      {
+                        "id": "9874554dksa-wew8-asdd-87sa-8798454524",
+                        "description": "Walk the dog",
+                        "status": "DOING"
+                      },
+                      {
+                        "id": "654218weeer-dasd-8972-3245-984214587b3",
+                        "description": "Go to the mall",
+                        "status": "DONE"
+                      }
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/tasks/create": {
       "post": {
-        "summary": "Create a new Task",
-        "description": "Will be responsible for registering a new task",
+        "summary": "Create a new task.",
+        "description": "Will be responsible for registering a new task.",
         "tags": ["Tasks"],
         "requestBody": {
           "content": {
@@ -38,8 +92,8 @@
           "201": {
             "description": "Created",
             "content": {
-              "application/json":{
-                "schema":{
+              "application/json": {
+                "schema": {
                   "type": "object",
                   "properties": {
                     "message": {
@@ -50,7 +104,7 @@
                 },
                 "examples": {
                   "task": {
-                    "value":{
+                    "value": {
                       "id": "1222deaf-fe2e-444d-8e97-56ed98f254a3",
                       "description": "Go to the market to buy groceries",
                       "status": "PENDING"
@@ -61,12 +115,11 @@
             }
           }
         }
-      
       }
     },
-    "/tasks/delete/{id}": {
-      "delete": {
-        "summary": "Delete a existent task",
+    "/tasks/update/{id}": {
+      "put": {
+        "summary": "Update a task description.",
         "parameters": [
           {
             "in": "path",
@@ -78,7 +131,7 @@
             "description": "task id"
           }
         ],
-        "description": "Will be responsible to delete a task",
+        "description": "Will be responsible to change a task description.",
         "tags": ["Tasks"],
         "requestBody": {
           "content": {
@@ -86,7 +139,154 @@
               "schema": {
                 "properties": {
                   "description": {
-                    "type":"string"
+                    "type": "string"
+                  }
+                }
+              },
+              "examples": {
+                "task": {
+                  "value": {
+                    "description": "Pay the electricity bill"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Updated",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "string"
+                    },
+                    "description": {
+                      "type": "string"
+                    },
+                    "status": {
+                      "type": "string"
+                    }
+                  }
+                },
+                "examples": {
+                  "task": {
+                    "value": {
+                      "id": "1222deaf-fe2e-444d-8e97-56ed98f254a3",
+                      "description": "Pay the electricity bill",
+                      "status": "DONE"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Task do not exists!"
+          }
+        }
+      }
+    },
+    "tasks/update/status/{id}": {
+      "patch": {
+        "summary": "Update a task status.",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "schema": {
+              "type": "string"
+            },
+            "required": true,
+            "description": "task id"
+          }
+        ],
+        "description": "Will be responsible to update a task status.",
+        "tags": ["Tasks"],
+        "requestBody": {
+          "description": "Status values available, PENDING, DOING, DONE",
+          "content": {
+            "application/json": {
+              "schema": {
+                "properties": {
+                  "status": {
+                    "type": "string"
+                  }
+                }
+              },
+              "examples": {
+                "task": {
+                  "value": {
+                    "status": "DONE"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Updated status",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "string"
+                    },
+                    "description": {
+                      "type": "string"
+                    }
+                  }
+                },
+                "examples": {
+                  "task": {
+                    "value": {
+                      "id": "1222deaf-fe2e-444d-8e97-56ed98f254a3",
+                      "description": "Go to the course",
+                      "status": "DONE"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid Status"
+          },
+          "404": {
+            "description": "Task do not exists!"
+          }
+        }
+      }
+    },
+    "/tasks/delete/{id}": {
+      "delete": {
+        "summary": "Delete a existent task.",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "schema": {
+              "type": "string"
+            },
+            "required": true,
+            "description": "task id"
+          }
+        ],
+        "description": "Will be responsible to delete a task.",
+        "tags": ["Tasks"],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "properties": {
+                  "description": {
+                    "type": "string"
                   }
                 }
               },
@@ -106,7 +306,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "type":"object",
+                  "type": "object",
                   "properties": {
                     "message": {
                       "type": "string",
@@ -116,7 +316,7 @@
                 },
                 "examples": {
                   "task": {
-                    "value":{
+                    "value": {
                       "message": "Task Deleted"
                     }
                   }
@@ -131,5 +331,4 @@
       }
     }
   }
-
 }
