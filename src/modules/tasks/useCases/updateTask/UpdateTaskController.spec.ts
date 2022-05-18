@@ -1,5 +1,5 @@
 import request from 'supertest'
-import { app } from '../../../../app'
+import { app } from '../../../../shared/http/app'
 import { prisma } from '../../../../database/prisma'
 import { Task } from '../../repositories/entities/Task'
 
