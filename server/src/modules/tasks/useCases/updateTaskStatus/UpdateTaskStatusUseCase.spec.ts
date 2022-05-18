@@ -44,6 +44,6 @@ describe('Update Task Status', () => {
     const { id } = createTask
     const status = 'DONEEE' as TasksStatus
 
-    await expect(updatedTaskStatusUseCase.execute({ id, status })).rejects.toEqual(new AppError('Invalid Status', 403))
+    await expect(updatedTaskStatusUseCase.execute({ id, status })).rejects.toEqual(new AppError('Invalid Status', 400))
   })
 })
