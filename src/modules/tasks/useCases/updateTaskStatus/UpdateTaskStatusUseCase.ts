@@ -21,7 +21,7 @@ class UpdateTaskStatusUseCase {
     const values = Object.values(TasksStatus)
 
     if (!values.includes(status)) {
-      throw new AppError('Invalid Status', 403)
+      throw new AppError('Invalid Status', 400)
     }
 
     const updatedTaskStatus = await this.tasksRepository.updateTaskStatus({ id, status })
