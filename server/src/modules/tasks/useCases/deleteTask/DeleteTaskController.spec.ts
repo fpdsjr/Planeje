@@ -1,8 +1,8 @@
 
+import { Task } from '@modules/tasks/infra/entities/Task'
+import { app } from '@shared/infra/http/app'
+import { prisma } from 'src/database/prisma'
 import request from 'supertest'
-import { app } from '../../../../shared/infra/http/app'
-import { prisma } from '../../../../database/prisma'
-import { Task } from '../../infra/entities/Task'
 
 describe('Delete Task Controller', () => {
   afterAll(async () => {

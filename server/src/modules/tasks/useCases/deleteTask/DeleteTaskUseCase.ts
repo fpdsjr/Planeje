@@ -1,6 +1,6 @@
+import { ITasksRepository } from '@modules/tasks/infra/ITasksRepository'
+import { AppError } from '@shared/errors/AppError'
 import { inject, injectable } from 'tsyringe'
-import { AppError } from '../../../../shared/errors/AppError'
-import { ITasksRepository } from '../../infra/ITasksRepository'
 
 @injectable()
 class DeleteTaskUseCase {

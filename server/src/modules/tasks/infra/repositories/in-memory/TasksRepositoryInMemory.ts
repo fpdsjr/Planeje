@@ -1,8 +1,8 @@
-import { ICreateTaskDTO } from '../../../dtos/ICreateTaskDTO'
-import { ITasksRepository } from '../../ITasksRepository'
-import { Task } from '../../entities/Task'
-import { IUpdateTaskDTO } from '../../IUpdateTaskDTO'
-import { IUpdateTaskStatusDTO } from '../../../dtos/IUpdateTaskStatusDTO'
+import { ICreateTaskDTO } from '@modules/tasks/dtos/ICreateTaskDTO'
+import { ITasksRepository } from '@modules/tasks/infra/ITasksRepository'
+import { Task } from '@modules/tasks/infra/entities/Task'
+import { IUpdateTaskDTO } from '@modules/tasks/dtos/IUpdateTaskDTO'
+import { IUpdateTaskStatusDTO } from '@modules/tasks/dtos/IUpdateTaskStatusDTO'
 class TasksRepositoryInMemory implements ITasksRepository {
   tasks: Task[] = []
 
@@ -21,7 +21,7 @@ class TasksRepositoryInMemory implements ITasksRepository {
   async findTaskById (id: string): Promise<Task | null> {
     const findTaskById = this.tasks.find((task) => task.id === id)
 
-    return findTaskById as Task | null
+    return findTaskById as Task
   }
 
   async deleteTask (id: string): Promise<void> {

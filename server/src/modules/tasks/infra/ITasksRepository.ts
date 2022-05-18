@@ -1,7 +1,7 @@
-import { Task } from './entities/Task'
-import { ICreateTaskDTO } from '../dtos/ICreateTaskDTO'
-import { IUpdateTaskDTO } from './IUpdateTaskDTO'
-import { IUpdateTaskStatusDTO } from '../dtos/IUpdateTaskStatusDTO'
+import { Task } from '@modules/tasks/infra/entities/Task'
+import { ICreateTaskDTO } from '@modules/tasks/dtos/ICreateTaskDTO'
+import { IUpdateTaskDTO } from '@modules/tasks/dtos/IUpdateTaskDTO'
+import { IUpdateTaskStatusDTO } from '@modules/tasks/dtos/IUpdateTaskStatusDTO'
 
 interface ITasksRepository {
   createTask: ({ description }: ICreateTaskDTO) => Promise<Task>
