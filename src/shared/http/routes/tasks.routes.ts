@@ -1,9 +1,9 @@
 import { Router } from 'express'
-import { CreateTaskController } from '../modules/tasks/useCases/createTask/CreateTaskController'
-import { DeleteTaskController } from '../modules/tasks/useCases/deleteTask/DeleteTaskController'
-import { ListAllTasksController } from '../modules/tasks/useCases/listAllTasks/ListAllTasksController'
-import { UpdateTaskController } from '../modules/tasks/useCases/updateTask/UpdateTaskController'
-import { UpdateTaskStatusController } from '../modules/tasks/useCases/updateTaskStatus/UpdateTaskStatusController'
+import { CreateTaskController } from '../../../modules/tasks/useCases/createTask/CreateTaskController'
+import { DeleteTaskController } from '../../../modules/tasks/useCases/deleteTask/DeleteTaskController'
+import { ListAllTasksController } from '../../../modules/tasks/useCases/listAllTasks/ListAllTasksController'
+import { UpdateTaskController } from '../../../modules/tasks/useCases/updateTask/UpdateTaskController'
+import { UpdateTaskStatusController } from '../../../modules/tasks/useCases/updateTaskStatus/UpdateTaskStatusController'
 
 const tasksRoutes = Router()
 
