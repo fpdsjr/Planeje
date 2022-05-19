@@ -16,6 +16,8 @@
     "styled-components": "^5.3.5"
   },
   "devDependencies": {
+    "@swc/core": "^1.2.186",
+    "@swc/jest": "^0.2.21",
     "@types/jest": "^27.5.1",
     "@types/react": "^18.0.0",
     "@types/react-dom": "^18.0.0",
