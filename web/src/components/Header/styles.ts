@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import bgDesktopDark from '../../assets/bg-desktop-dark.jpg';
 
 export const Container = styled.div`
-  width: 100vw;
+  width: 100%;
   height: 400px;
   background-image: url(${bgDesktopDark});
   background-size: cover;
@@ -12,12 +12,11 @@ export const Container = styled.div`
 
 export const Content = styled.div`
   margin: 0 auto;
-  width: 600px;
-  height: 200px;
+  width: 700px;
+  height: 300px;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  gap: 4rem;
+  margin-top: -50px;
+  align-items: center;
   color: var(--lightGrayishBlue);
   text-transform: uppercase;
 `;
