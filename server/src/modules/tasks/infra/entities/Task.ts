@@ -1,6 +1,7 @@
 
-import { TasksStatus } from '@prisma/client'
 import { v4 as uuidv4 } from 'uuid'
+
+type TasksStatus = 'PENDING' | 'DOING' | 'DONE'
 
 class Task {
   id: string
