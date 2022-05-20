@@ -1,6 +1,5 @@
-
-import { app } from '@shared/infra/http/app'
-import { prisma } from 'src/database/prisma'
+import { app } from '../../../../shared/infra/http/app'
+import { prisma } from '../../../../database/prisma'
 import request from 'supertest'
 
 describe('Create Task Controller', () => {
