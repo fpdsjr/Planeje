@@ -1,4 +1,5 @@
-import { TasksStatus } from '@prisma/client'
+
+type TasksStatus = 'PENDING' | 'DOING' | 'DONE'
 
 interface IUpdateTaskStatusDTO {
   id: string

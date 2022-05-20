@@ -1,8 +1,9 @@
 import { TasksRepositoryInMemory } from '@modules/tasks/infra/repositories/in-memory/TasksRepositoryInMemory'
-import { TasksStatus } from '@prisma/client'
 import { AppError } from '@shared/errors/AppError'
 
 import { UpdateTaskStatusUseCase } from './UpdateTaskStatusUseCase'
+
+type TasksStatus = 'PENDING' | 'DOING' | 'DONE'
 
 let tasksRepositoryInMemory: TasksRepositoryInMemory
 let updatedTaskStatusUseCase: UpdateTaskStatusUseCase

@@ -1,7 +1,6 @@
 import { IUpdateTaskStatusDTO } from '@modules/tasks/dtos/IUpdateTaskStatusDTO'
 import { Task } from '@modules/tasks/infra/entities/Task'
 import { ITasksRepository } from '@modules/tasks/infra/ITasksRepository'
-import { TasksStatus } from '@prisma/client'
 import { AppError } from '@shared/errors/AppError'
 import { inject, injectable } from 'tsyringe'
 
@@ -16,6 +15,12 @@ class UpdateTaskStatusUseCase {
 
     if (!findTask) {
       throw new AppError('Task do not exists!', 404)
+    }
+
+    const TasksStatus = {
+      PENDING: 'PENDING',
+      DOING: 'DOING',
+      DONE: 'DONE'
     }
 
     const values = Object.values(TasksStatus)
