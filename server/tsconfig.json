@@ -1,10 +1,12 @@
 {
   "compilerOptions": {
-    "target": "es2019",
+    "target": "es2020",
     "experimentalDecorators": true,
     "emitDecoratorMetadata": true,
     "module": "commonjs",
     "baseUrl": "./src",
+    "rootDir": "./src",
+    "outDir": "./dist",
     "paths": {
       "@modules/*": ["modules/*"],
       "@shared/*": ["shared/*"]
@@ -15,5 +17,6 @@
     "strict": true,
     "strictPropertyInitialization": false,
     "skipLibCheck": true
-  }
+  },
+  "include": ["src"]
 }
