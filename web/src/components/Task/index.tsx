@@ -59,15 +59,18 @@ function Task({
       <ContentContainer>
         <p>{description}</p>
         <ButtonContainer>
-          <select onChange={(e) => handleSelect(e, id)} value={status}>
+          <select
+            data-testid="select-option"
+            onChange={(e) => handleSelect(e, id)}
+            value={status}>
             <option value="PENDING">Fazer</option>
             <option value="DOING">Fazendo</option>
             <option value="DONE">Feito</option>
           </select>
-          <div onClick={handleToggleClick}>
+          <div data-testid="update-task" onClick={handleToggleClick}>
             <AiFillEdit />
           </div>
-          <div onClick={() => deleteTask(id)}>
+          <div data-testid="delete-task" onClick={() => deleteTask(id)}>
             <AiOutlineClose />
           </div>
         </ButtonContainer>
