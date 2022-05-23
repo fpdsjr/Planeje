@@ -9,7 +9,7 @@ const setIsHavingATaskEvent = jest.fn();
 
 describe('Task description', () => {
   it('should change the status', () => {
-    const { getByTestId, getByText } = render(
+    const { getByTestId } = render(
       <Task
         id="123456"
         description="new task add"
