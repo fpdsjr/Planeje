@@ -3,7 +3,12 @@ import fetchApi from '../../utils/fetchApi';
 import handleSortFilter from '../../utils/handleSort';
 import Task from '../Task';
 
-import { Container, CreateTaskInput, TasksContainer } from './styles';
+import {
+  Container,
+  CreateTaskInput,
+  TasksContainer,
+  ErrorComponent,
+} from './styles';
 
 interface IRequest {
   id: string;
@@ -17,6 +22,7 @@ function Main() {
   const [getAllTasks, setGetAllTasks] = useState<IRequest[]>([]);
   const [isFiltered, setIsFiltered] = useState(false);
   const [isHavingATaskEvent, setIsHavingATaskEvent] = useState(false);
+  const [emptyTask, setEmptyTask] = useState(false);
 
   function handleChange({ target }: ChangeEvent<HTMLInputElement>) {
     setTask(target.value);
@@ -24,12 +30,17 @@ function Main() {
 
   async function onKeyPress(e: React.KeyboardEvent<HTMLInputElement>) {
     if (e.key === 'Enter') {
-      await fetchApi('post', '/tasks/create', {
-        description: task,
-      });
+      if (!task) {
+        setEmptyTask(true);
+      } else {
+        setEmptyTask(false);
+        await fetchApi('post', '/tasks/create', {
+          description: task,
+        });
 
-      setTask('');
-      setIsHavingATaskEvent(!isHavingATaskEvent);
+        setTask('');
+        setIsHavingATaskEvent(!isHavingATaskEvent);
+      }
     }
   }
 
@@ -66,6 +77,9 @@ function Main() {
         onChange={handleChange}
         placeholder="Adicionar uma nova tarefa..."
       />
+      {emptyTask ? (
+        <ErrorComponent>Por favor digite uma nova tarefa.</ErrorComponent>
+      ) : null}
       <TasksContainer>
         {getAllTasks.map(({ id, description, status }) => (
           <Task
@@ -83,7 +97,7 @@ function Main() {
         <div>
           <button onClick={() => handleSort('status')}>Status</button>
           <button onClick={() => handleSort('created_at')}>
-            Data de criação
+            Ordem de criação
           </button>
           <button onClick={() => handleSort('description')}>
             Ordem alfabética
