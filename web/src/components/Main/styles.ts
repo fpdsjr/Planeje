@@ -62,3 +62,8 @@ export const TasksContainer = styled.div`
   background-color: var(--veryDarkDesaturatedBlue);
   border-radius: 0.25rem;
 `;
+
+export const ErrorComponent = styled.div`
+  text-align: justify;
+  color: var(--lightGrayishBlueHover);
+`;
