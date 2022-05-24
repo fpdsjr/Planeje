@@ -70,7 +70,7 @@ function Main() {
   }, [isHavingATaskEvent]);
 
   return (
-    <Container>
+    <Container taskCont={getAllTasks.length}>
       <CreateTaskInput
         onKeyPress={onKeyPress}
         value={task}
@@ -80,7 +80,7 @@ function Main() {
       {emptyTask ? (
         <ErrorComponent>Por favor digite uma nova tarefa.</ErrorComponent>
       ) : null}
-      <TasksContainer>
+      <TasksContainer taskCont={getAllTasks.length}>
         {getAllTasks.map(({ id, description, status }) => (
           <Task
             key={id}
