@@ -81,7 +81,11 @@ function Task({
           value={inputValue}
           onChange={(e) => handleInputChange(e)}
         />
-        <button onClick={() => handleSubmit(id)}>Atualizar</button>
+        <button
+          disabled={inputValue.length === 0 ? true : false}
+          onClick={() => handleSubmit(id)}>
+          Atualizar
+        </button>
       </TaskEditor>
       <hr />
     </Container>
