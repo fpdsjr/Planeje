@@ -1,0 +1,38 @@
+version: '3.7'
+
+services:
+  db:
+    image: postgres:13
+    container_name: server_planeje
+    restart: always
+    environment:
+      - POSTGRES_USER=Ebtry
+      - POSTGRES_PASSWORD=password
+      - POSTGRES_DB=Ebtry
+    volumes:
+      - ebtry:/data/postgres
+  backend:
+    build: ./server
+    ports:
+    - 3333:3333     
+    environment:
+      - DATABASE_URL=postgresql://Ebtry:password@db:5432/Ebtry?schema=public
+      - DATABASE_URL_TEST=postgresql://Ebtry:password@db:5432/supertest?schema=public
+    depends_on:
+      - db
+  frontend:
+    build: ./web
+    ports:
+      - 3000:3000
+    depends_on:
+      - backend
+    
+      
+volumes:
+  ebtry:
+    driver: local
+
+
+
+
+    
