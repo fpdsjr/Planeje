@@ -10,7 +10,7 @@ export const Container = styled.div`
   hr {
     border: none;
     height: 1px;
-    background-color: var(--veryDarkGrayishBlueHover); /* Modern Browsers */
+    background-color: var(--veryDarkGrayishBlueHover);
   }
 `;
 
@@ -34,6 +34,10 @@ export const ContentContainer = styled.div`
     height: 30px;
     border: none;
     border-radius: 0.25rem;
+  }
+
+  @media (max-width: 800px) {
+    width: 380px;
   }
 `;
 
@@ -71,7 +75,7 @@ export const ButtonContainer = styled.div`
 `;
 
 export const TaskEditor = styled.div<IRequest>`
-  opacity: ${(props) => (props.toggleEditor ? '1' : '0')};
+  display: ${(props) => (props.toggleEditor ? '1' : 'none')};
   position: absolute;
   top: 10px;
   left: 10px;
@@ -89,6 +93,14 @@ export const TaskEditor = styled.div<IRequest>`
     &:focus {
       outline: none;
     }
+
+    @media (max-width: 800px) {
+      width: 265px;
+
+      &::placeholder {
+        font-size: 16px;
+      }
+    }
   }
 
   button {
@@ -104,6 +116,10 @@ export const TaskEditor = styled.div<IRequest>`
     &:hover {
       background-color: var(--veryDarkGrayishBlue);
       transform: scale(1.05);
+    }
+
+    &:disabled {
+      opacity: 0.4;
     }
   }
 `;
