@@ -54,27 +54,6 @@ describe('Task description', () => {
     expect(fetchApi).toHaveBeenCalled();
   });
 
-  it('should update a test update a task', () => {
-    const { getByText } = render(
-      <Task
-        id="123456"
-        description="new task add"
-        status="PENDING"
-        deleteTask={deleteTask}
-        setIsHavingATaskEvent={setIsHavingATaskEvent}
-        isHavingATaskEvent={true}
-      />,
-    );
-
-    (fetchApi as jest.Mock).mockReturnValue('OK');
-
-    const select = getByText('Atualizar');
-
-    fireEvent.click(select);
-
-    expect(fetchApi).toHaveBeenCalled();
-  });
-
   it('should delete a task', () => {
     const deleteTask = jest.fn();
 
