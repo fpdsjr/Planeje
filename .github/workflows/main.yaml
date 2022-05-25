@@ -2,6 +2,10 @@ name: Tests Action
 
 on: [push]
 
+defaults:
+  run:
+    working-directory: ./server
+
 jobs:
   eslint:
     runs-on: ubuntu-20.04
@@ -19,7 +23,7 @@ jobs:
 
       - name: Run ESLint
         run: npx eslint . --ext .ts
-    
+
   test:
     runs-on: ubuntu-20.04
     steps:
