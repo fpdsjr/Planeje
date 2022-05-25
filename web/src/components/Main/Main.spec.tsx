@@ -1,13 +1,24 @@
 import { render, fireEvent, waitFor, act } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import handleSortFilter from '../../utils/handleSort';
+import fetchApi from '../../utils/fetchApi';
 
 import Main from '.';
 
 jest.mock('../../utils/handleSort');
+jest.mock('../../utils/fetchApi');
 
 describe('Header Component', () => {
   it('should have a input with the right placeholder', () => {
+    (fetchApi as jest.Mock).mockReturnValue([
+      {
+        id: '69218be1-548b-4929-a8db-c338438a6ee3',
+        description: 'Aprender',
+        status: 'PENDING',
+        created_at: '2022-05-24T04:13:58.935Z',
+      },
+    ]);
+
     const { getByPlaceholderText } = render(<Main />);
 
     expect(
@@ -16,14 +27,19 @@ describe('Header Component', () => {
   });
 
   it('should be able to create a new task', async () => {
-    const { getByPlaceholderText, getByText, debug } = render(<Main />);
-    const inputAddTask = getByPlaceholderText('Adicionar uma nova tarefa...');
+    (fetchApi as jest.Mock).mockReturnValue([
+      {
+        id: '69218be1-548b-4929-a8db-c338438a6ee3',
+        description: 'Aprender',
+        status: 'PENDING',
+        created_at: '2022-05-24T04:13:58.935Z',
+      },
+    ]);
 
-    await act(async () => userEvent.type(inputAddTask, 'new task{enter}'));
+    render(<Main />);
 
-    await waitFor(() => {
-      expect(getByText('new task')).toBeInTheDocument();
-    });
+    expect(fetchApi).toHaveBeenCalled();
+    expect;
   });
 
   it('should call the sort function when click on the filter buttons', () => {
