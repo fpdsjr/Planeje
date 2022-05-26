@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "ts-node-dev --exit-child -r tsconfig-paths/register --transpile-only --ignore-watch node_modules src/shared/infra/http/server.ts",
     "pretest": "prisma migrate reset --force --skip-seed --schema ./src/shared/infra/prisma/schema.test.prisma",
-    "prestart": "prisma migrate deploy",
+    "prestart": "prisma generate && prisma migrate deploy",
     "build": "yarn tsc",
     "start": "node dist/shared/infra/http/server.js",
     "test": "NODE_ENV=test jest",
