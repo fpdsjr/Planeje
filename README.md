@@ -35,7 +35,7 @@ Para rodar a aplicação voce pode escolher rodar através de um container no do
 <details>
 <summary><b>Docker</b></summary>
 
-## Pré Requisitos
+## Pré-Requisitos
 
 Para rodar a aplicação é necessário ter instalado corretamente o [Docker](https://docs.docker.com/get-docker/) e o [Docker-Compose](https://docs.docker.com/compose/install/).
 
@@ -71,7 +71,7 @@ Apos conclusão da montagem do container a aplicação vai estar disponível nos
 <details>
 <summary><b>Node</b></summary>
 
-## Pré Requisitos
+## Pré-Requisitos
 
 Para rodar a aplicação é necessário ter instalado o [Node](https://nodejs.org/en/) e um banco de dados funcionando [PostgreSQL](https://www.postgresql.org/)
 
@@ -154,10 +154,10 @@ Agora com o Frontend Ligado temos a aplicação funcionado já integrada com o B
 <details>
 <summary><b>Frontend</b></summary>
 
-Entre no diretório server
+Entre no diretório web
 
 ```bash
-  cd server
+  cd web
 ```
 
 Instalando as dependências
