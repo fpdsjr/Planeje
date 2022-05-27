@@ -27,6 +27,6 @@ export default function handleSortFilter(allTasks: ITask[], sort: string) {
       a.status.localeCompare(b.status),
     );
 
-    return sortedByDescription;
+    return sortedByDescription.reverse();
   }
 }
