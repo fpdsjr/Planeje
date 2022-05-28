@@ -30,7 +30,7 @@ Link da aplicação Frontend com deploy feito no vercel já integrada com o Back
 
 ## Rodar Localmente
 
-Para rodar a aplicação voce pode escolher rodar através de um container no docker ou localmente com node.
+Para rodar a aplicação você pode escolher rodar através de um container no docker ou localmente com node.
 
 <details>
 <summary><b>Docker</b></summary>
