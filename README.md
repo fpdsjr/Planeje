@@ -177,7 +177,7 @@ Rodando os testes
 <details>
 <summary><b>Backend</b></summary>
 
-Entre no diretório web
+Entre no diretório server
 
 ```bash
   cd server
