@@ -26,7 +26,7 @@ O Frontend da aplicação conta com uma interface feita em react, e estilizada c
 
 Link da aplicação Frontend com deploy feito no vercel já integrada com o Backend rodando no railway.
 
-[Planeje](https://projete.vercel.app/)
+[Planeje](https://planeje.vercel.app/)
 
 ## Rodar Localmente
 
