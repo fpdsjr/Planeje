@@ -77,7 +77,7 @@ Para rodar a aplicação é necessário ter instalado o [Node](https://nodejs.or
 
 ## Rodando no Node
 
-O Projeto conta com um repositório monorepo, então para tudo funcionar corretamente precisando ligar o Frontend e o Backend de maneira independente, siga os passos abaixo.
+O Projeto conta com um repositório monorepo, então para tudo funcionar corretamente precisamos ligar o Frontend e o Backend de maneira independente, siga os passos abaixo.
 
 Clone o projeto
 
